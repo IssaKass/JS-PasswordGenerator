@@ -1,0 +1,181 @@
+:root {
+  --c1: #0d1b2a;
+  --c2: #1b263b;
+  --c3: #415a77;
+  --c4: #778da9;
+  --c5: #e0e1dd;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: var(--c5);
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  background-color: var(--c1);
+  color: var(--c5);
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25);
+}
+
+.box {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  background-color: var(--c2);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.range-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+}
+
+.subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+#password-el {
+  margin: 0;
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#copy,
+#copied {
+  font-size: 12px;
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  opacity: 0;
+  transition: 300ms ease;
+}
+
+#password-el.copy ~ #copy {
+  opacity: 1;
+}
+
+#password-el.copied ~ #copied {
+  opacity: 1;
+}
+
+#length-value-el {
+  color: white;
+  margin-left: 3px;
+}
+
+.range {
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.range,
+.range::-webkit-slider-runnable-trac {
+  height: 2px;
+  background-color: var(--c4);
+  border-radius: 100vmax;
+}
+
+.range::-webkit-slider-thumb {
+  appearance: none;
+  width: 8px;
+  height: 20px;
+  border-radius: 100vmax;
+  background-color: var(--c5);
+}
+
+label {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+}
+
+label::before,
+label::after {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+label::before {
+  width: 50px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--c3);
+  right: 0;
+}
+
+label::after {
+  width: 20px;
+  height: 20px;
+  background-color: var(--c4);
+  left: calc(100% - 46px);
+  top: 5px;
+  border-radius: 50%;
+}
+
+.toggle {
+  display: none;
+  appearance: none;
+}
+
+.toggle:disabled + label::before,
+.toggle:disabled + label::after {
+  cursor: not-allowed;
+}
+
+.toggle:checked + label::before {
+  background-color: var(--c4);
+}
+.toggle:checked + label::after {
+  background-color: var(--c5);
+  transform: translateX(22px);
+}
+
+button {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  background-color: var(--c5);
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--c1);
+  border: none;
+  cursor: pointer;
+  transition: 200ms ease;
+}
+
+button:active {
+  transform: translateY(-5px);
+}

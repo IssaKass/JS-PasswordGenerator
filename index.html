@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title">Password Generator</h2>
+      <div class="box">
+        <div class="form-group">
+          <p id="password-el">Click on generate</p>
+          <span id="copy">Copy</span>
+          <span id="copied">Copied!</span>
+        </div>
+      </div>
+      <div class="box">
+        <h4 class="subtitle">Length: <span id="length-value-el">4</span></h4>
+        <div class="form-group range-group">
+          <span>4</span>
+          <input
+            type="range"
+            min="4"
+            max="20"
+            value="4"
+            id="length-el"
+            class="range"
+          />
+          <span>20</span>
+        </div>
+      </div>
+      <div class="box">
+        <h4 class="subtitle">Settings</h4>
+        <div class="form-group">
+          <input type="checkbox" id="digits-el" class="toggle" />
+          <label for="digits-el">Include digits</label>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="letters-el" class="toggle" />
+          <label for="letters-el">Include letters</label>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="symbols-el" class="toggle" />
+          <label for="symbols-el">Include symbols</label>
+        </div>
+      </div>
+      <button id="generate-btn">Generate password</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
